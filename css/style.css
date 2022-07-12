@@ -414,9 +414,21 @@ html {
   display: flex;
 }
 
-/* .section-how__nav-item {
+.tabs {
+  display: flex;
+}
 
-} */
+.tab-content {
+  display: none;
+}
+
+.tab-content-active {
+  display: block;
+}
+
+.tabs__item:not(:last-child) {
+  margin-right: 40px;
+}
 
 .section-how__nav-item-heading {
   font-weight: 400;
@@ -484,7 +496,6 @@ html {
 }
 
 .section-how__img {
-  background-image: url(/img/how1x-1.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -492,63 +503,121 @@ html {
   width: 43%;
 }
 
+.section-how__img_one {
+  background-image: url(/img/how1x-1.png);
+}
+
+.section-how__img_two {
+  background-image: url(/img/how1x-2.png);
+}
+
+.section-how__img_three {
+  background-image: url(/img/how1x-3.png);
+}
+
+.section-how__img_four {
+  background-image: url(/img/how1x-4.png);
+}
+
 /* FAQ */
-.section-faq__container {
+.section-questions__container {
   margin-bottom: 100px;
 }
 
-.section-faq__heading {
+.section-questions__heading {
   margin-bottom: 32px;
 }
 
-.section-faq__item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px 0;
-  border-top: 1px solid #CACACA;
+.accordion {
+  border-bottom: 1px solid #cacaca;
 }
 
-.section-faq__item:hover {
-  /* cursor: pointer; */
-}
-
-.section-faq__item:last-child {
-  border-bottom: 1px solid #CACACA;
-}
-
-.section-faq__icon-link {
-  width: 50px;
-  height: 50px;
-}
-
-.section-faq__icon-link:hover .section-faq__icon path, 
-.section-faq__icon-link:focus .section-faq__icon path {
-  fill: white;
-}
-
-.section-faq__icon-link:hover .section-faq__icon ellipse,
-.section-faq__icon-link:focus .section-faq__icon ellipse {
-  fill: #FF9900;
-}
-
-.section-faq__icon-link:focus {
+.questions-wrapper {
+  position: relative;
+  margin-bottom: -1px;
+  padding: 41px 0;
+  cursor: pointer;
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+  transition: 0.4s ease;
   outline: none;
 }
 
-.section-faq__icon-link:active
- .section-faq__icon {
+.ui-state-hover{
+  transition: 0.4s ease;
+  border-top: 1px solid #ff9900;
+  border-color: #ff9900;
+  z-index: 10;
+}
+
+.questions-wrapper:hover .questions__title{
+  color: #ff9900;
+}
+
+.questions-wrapper:hover .accordion-icon {
+  background-color: #ff9900;
+  background-image: url(/img/white+.svg);
+}
+
+.ui-state-focus{
+  transition: 0.4s ease;
+  border-color: #ff9900;
+  z-index: 10;
+}
+
+.ui-state-focus .questions__title{
+  color: #ff9900;
+}
+
+.ui-state-focus .accordion-icon {
+  background-color: #ff9900;
+  background-image: url(/img/white+.svg);
+}
+
+.questions__title { 
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color:#333;
+  transition: 0.4s ease;
+  outline: none;
+}
+
+.ui-accordion-content{
+  min-height: auto;
+  margin-bottom: -1px;
+  padding-bottom: 40px;
+}
+
+.accordion-icon {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-image: url(/img/+х.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ececec;
+  transition: 0.4s ease;
+}
+
+.questions__description{
+  font-style: 16px;
+  line-height: 200%;
+  color: #333;
+}
+
+.questions__description:not(:first-child){
+  padding-top: 40px;
+}
+
+.ui-state-active .accordion-icon{
   transform: rotate(45deg);
+  transition: 0.4s ease;
 }
-
-.section-faq__icon-link:active .section-faq__icon path {
-  fill: black;
-}
-
-.section-faq__icon-link:active .section-faq__icon ellipse {
-  fill: #CACACA;
-}
-
 /* Footer */
 .footer {
   background-color: #000000;
